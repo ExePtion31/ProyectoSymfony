@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ asset('css/bootstrap.min.css')}}" rel="stylesheet"></link>
+    <link href="{{ asset('css/fa.all.min.css')}}" rel="stylesheet"></link>
+    <link href="{{ asset('css/normalize.css')}}" rel="stylesheet"></link>
+    <link href="{{ asset('css/main.css')}}" rel="stylesheet"></link>
+    <link href="{{ asset('css/dataTables.bootstrap4.min.css')}}" rel="stylesheet"></link>
+    <title>Registrar {{k}}</title>
+</head>
+<body>
+    <a href="{{ path('homepage')}}" class="btn btn-outline-primary text-decoration-none m-3">Volver</a>
+    {% if k == "Estudiante"  %}
+        <div class="main m-3 p-3 shadow rounded">
+            <div class="contenedor_registros">
+                <h2>Registrar Estudiantes</h2>
+                <form method="POST" id="form_registro_est">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text fw-bolder" id="basic-addon1">Nombre:</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Nombre del estudiante" name="nombre" id="nombreRE">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text fw-bolder" id="basic-addon1">Edad:</span>
+                        </div>
+                        <input type="number" class="form-control" placeholder="Edad" name="edad" id="edadRE">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text fw-bolder" id="basic-addon1">Grado:</span>
+                        </div>
+                        <select class="form-select" aria-label="Default select example" name="grado" id="gradoRE">
+                            <option value="0" selected >Seleccione un grado</option>
+                            <option value="1">Primero</option>
+                            <option value="2">Segundo</option>
+                            <option value="3">Tercero</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary fw-bolder">ENVIAR</button>
+                </form>
+            </div>
+        </div>
+
+        {% elseif k == "Materia" %}
+
+        <div class="main m-3 p-3 shadow rounded">
+            <div class="contenedor_registros">
+                <h2>Registrar Materias</h2>
+                <form method="POST" action="" id="form_registro_mate">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text fw-bolder" id="basic-addon1">Materia:</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Nombre de la materia" name="materia" id="materiaRM">
+                    </div>
+                    <button type="submit" class="btn btn-primary fw-bolder">ENVIAR</button>
+                </form>
+            </div>
+        </div>
+        {% else %}
+        <div class="main m-3 p-3 shadow rounded">
+            <div class="contenedor_registros">
+                <h2>Calificaciones Finales</h2>
+                <form method="POST" id="form_registro_notas">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text fw-bolder" id="basic-addon1">Fecha:</span>
+                        </div>
+                        <input type="date" class="form-control" name="fecha" id="fechaRCF">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text fw-bolder" id="basic-addon1">Estudiante:</span>
+                        </div>
+                        <select class="form-select" aria-label="Default select example" name="estudiante" id="estudianteRCF">
+                            <option value="0" selected >Seleccione un estudiante</option>
+                            <option value="1">Juan</option>
+                            <option value="2">Pablo</option>
+                            <option value="3">Pedro</option>
+                        </select>
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text fw-bolder" id="basic-addon1">Materia:</span>
+                        </div>
+                        <select class="form-select" aria-label="Default select example" name="materia" id="materiaRCF">
+                            <option value="0" selected >Seleccione una materia</option>
+                            <option value="1">Ingles</option>
+                            <option value="2">Math</option>
+                            <option value="3">Español</option>
+                        </select>
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text fw-bolder" id="basic-addon1">Calificación:</span>
+                        </div>
+                        <input type="number" class="form-control" placeholder="Calificación final" name="calificacion" id="calificacionRCF" max="10" min="0">
+                    </div>
+                    <button type="submit" class="btn btn-primary fw-bolder">ENVIAR</button>
+                </form>
+            </div>
+        </div>
+    {% endif %}
+</body>
+<footer>
+    <script src="{{ asset('js/jquery.min.js')}}"></script>
+    <script src="{{ asset('js/bootstrap.min.js')}}"></script>
+    <script src="{{ asset('js/sweetalert2.js')}}"></script>
+    <script src="{{ asset('js/fa.all.min.js')}}"></script>
+    <script src="{{ asset('js/main.js')}}"></script>
+    <script src="{{ asset('js/jquery.dataTables.min.js')}}"></script>
+    <script src="{{ asset('js/dataTables.bootstrap4.min.js')}}"></script>
+</footer>
+</html>
